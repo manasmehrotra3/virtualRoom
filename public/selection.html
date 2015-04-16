@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Virtual Room</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" type="text/css" charset="utf-8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="css/selection.css" type="text/css" charset="utf-8">
+</head>
+
+<body>
+    <div ng-controller="SelectionController">
+        <div class="tile" ng-click="select(placeId)" ng-repeat="(placeId, place) in places">
+            <img ng-src="{{ ::place.thumbnail }}" alt="">
+            <div class="caption">
+                <h2>{{ ::place.name }}</h2>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/angular.min.js"></script>
+    <script src="js/places.js"></script>
+    <script src="js/selection.js"></script>
+</body>
+
+</html>
